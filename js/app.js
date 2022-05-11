@@ -1,56 +1,64 @@
-// clickable thing
-const memory8gb = document.getElementById("8-gb-memory")
-const memory16gb = document.getElementById("16-gb-memory")
-
-const storage256gb = document.getElementById("256gb-storage")
-const storage512gb = document.getElementById("512gb-storage")
-const storage1tb = document.getElementById("1tb-storage")
-
-const freeDelivery = document.getElementById("free-delivery")
-const paidDelivery = document.getElementById("paid-delivery")
-
-
-
 function totalPriceStatus() {
     const extraMemory = document.getElementById("extra-memory").innerText
     const extraStorage = document.getElementById("extra-storage").innerText
     const deliveryCharge = document.getElementById("delivery-charge").innerText
     const totalPrice = document.getElementById("total-price")
+    const discountTotalPrice = document.getElementById("discount-total-price")
     totalPrice.innerText = 1200 + parseInt(extraMemory) + parseInt(extraStorage) + parseInt(deliveryCharge)
-    console.log(totalPrice.innerText)
+    discountTotalPrice.innerText = totalPrice.innerText
 }
 function updateproductPrice(productId, price) {
     const product = document.getElementById(productId)
     product.innerText = price;
 }
 // memory
-memory8gb.addEventListener('click', function () {
+document.getElementById("8-gb-memory").addEventListener('click', function () {
     updateproductPrice("extra-memory", 0)
     totalPriceStatus()
 })
-memory16gb.addEventListener('click', function () {
+document.getElementById("16-gb-memory").addEventListener('click', function () {
     updateproductPrice("extra-memory", 180)
     totalPriceStatus()
 })
 // storage
-storage256gb.addEventListener('click', function () {
+document.getElementById("256gb-storage").addEventListener('click', function () {
     updateproductPrice("extra-storage", 0)
     totalPriceStatus()
 })
-storage512gb.addEventListener('click', function () {
+document.getElementById("512gb-storage").addEventListener('click', function () {
     updateproductPrice("extra-storage", 100)
     totalPriceStatus()
 })
-storage1tb.addEventListener('click', function () {
+document.getElementById("1tb-storage").addEventListener('click', function () {
     updateproductPrice("extra-storage", 180)
     totalPriceStatus()
 })
 // delivery
-freeDelivery.addEventListener('click', function () {
+document.getElementById("free-delivery").addEventListener('click', function () {
     updateproductPrice("delivery-charge", 0)
     totalPriceStatus()
 })
-paidDelivery.addEventListener('click', function () {
+document.getElementById("paid-delivery").addEventListener('click', function () {
     updateproductPrice("delivery-charge", 20)
     totalPriceStatus()
+})
+
+document.getElementById("promo-code-button").addEventListener('click', function () {
+    const promoInput = document.getElementById("promo-code-input")
+    const totalPrice = document.getElementById("total-price")
+    let discountTotalPrice = document.getElementById("discount-total-price")
+    const notifyPromo = document.getElementById("notify-promo-code")
+
+    if (promoInput.value == "saif") {
+        // promoInput.setAttribute = "disabled"
+        discountTotalPrice.innerText = (parseFloat(totalPrice.innerText) / 100) * 90;
+        notifyPromo.style.color = "green"
+        notifyPromo.innerText = "Promo Code Added. Reduced 20%"
+        promoInput.value = ""
+    }
+    else {
+        notifyPromo.style.color = "red"
+        notifyPromo.innerText = "Promo Code invalid, please try again"
+    }
+
 })
