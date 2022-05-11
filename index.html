@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mackbook Pro</title>
+    <!-- tailwind css  -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="container">
+      <div class="lg:flex mt-16">
+        <div class="flex-1">
+          <img
+            src="media/mac.png"
+            class="object-scale-down h-96 w-full"
+            alt=""
+          />
+        </div>
+        <div class="flex-1">
+          <div>
+            <h1 class="text-5xl font-semibold">
+              Customize your Blue 24-inch iMac with Apple M1 chip
+            </h1>
+            <p class="text-xl my-3">
+              Apple M1 chip with 8-core CPU with 4 performance cores and 4
+              efficiency cores, 7-core GPU, and 16-core Neural Engine 8GB
+              unified memory 256GB SSD storage Two Thunderbolt / USB 4 ports
+              Magic Mouse Magic Keyboard - US English
+            </p>
+          </div>
+          <div>
+            <!-- expand memory section starts-->
+            <div class="mt-12">
+              <h3 class="font-bold pb-2">Memory</h3>
+              <button
+                id="8-gb-memory"
+                class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded focus:ring-2 focus:ring-gray-400"
+              >
+                8GB unified memory
+              </button>
+              <button
+                id="16-gb-memory"
+                class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded focus:ring-2 focus:ring-gray-400"
+              >
+                16GB unified memory
+              </button>
+            </div>
+            <!-- expand storage section starts-->
+            <div class="mt-12">
+              <h3 class="font-bold pb-2">Storage</h3>
+              <button
+                id="256gb-storage"
+                class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded focus:ring-2 focus:ring-gray-400"
+              >
+                256GB SSD storage
+              </button>
+              <button
+                id="512gb-storage"
+                class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded focus:ring-2 focus:ring-gray-400"
+              >
+                512GB SSD storage
+              </button>
+              <button
+                id="1tb-storage"
+                class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded focus:ring-2 focus:ring-gray-400"
+              >
+                1TB SSD storage
+              </button>
+            </div>
+            <!-- delivery section starts-->
+            <div class="mt-12">
+              <h3 class="font-bold pb-2">Choose your delivery option</h3>
+              <button
+                id="free-delivery"
+                class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded focus:ring-2 focus:ring-gray-400"
+              >
+                Friday, Aug 25 FREE Prime Delivery
+              </button>
+              <button
+                id="paid-delivery"
+                class="bg-transparent hover:bg-black text-black font-semibold hover:text-white py-2 px-4 border border-black hover:border-transparent rounded focus:ring-2 focus:ring-gray-400"
+              >
+                Friday, Aug 21 Delivery charge $20
+              </button>
+            </div>
+            <!-- pricing status -->
+            <div class="cart-item mt-12">
+              <div class="flex">
+                <div class="flex-1">
+                  <h5 class="font-semibold">Best Price :</h5>
+                  <hr />
+                  <h5>Extra Memory Cost :</h5>
+                  <hr />
+                  <h5>Extra Storage Cost :</h5>
+                  <hr />
+                  <h5>Delivery charge :</h5>
+                  <hr
+                    style="border: 1px solid black; background-color: black"
+                  />
+                  <h5 class="font-bold">Total Price :</h5>
+                </div>
+                <div class="flex-1">
+                  <h5>
+                    $<span id="best-price" class="font-semibold">1299</span>
+                  </h5>
+                  <hr class="w-12" />
+                  <h5>$<span id="extra-memory">0</span></h5>
+                  <hr class="w-12" />
+                  <h5>$<span id="extra-storage">0</span></h5>
+                  <hr class="w-12" />
+                  <h5>$<span id="delivery-charge">0</span></h5>
+                  <hr
+                    class="w-12"
+                    style="border: 1px solid black; background-color: black"
+                  />
+                  <h5 class="font-bold">$<span id="total-price">1299</span></h5>
+                </div>
+              </div>
+            </div>
+            <!-- promo input field -->
+            <div class="mt-12 mb-12">
+              <h3 class="font-bold pb-2">Add Promo Code:</h3>
+              <input
+                id="promo-code-input"
+                type="text"
+                placeholder="Add promo code"
+                class="focus:ring-red-400 focus:border-red-300 border-2 py-1 p-4"
+              />
+              <button
+                class="bg-red-600 hover:bg-red-700 text-white font-bold p-1.5 px-3 rounded"
+                id="promo-code-button"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!-- footer section start  -->
+    <footer>
+      <div>
+        <h2 class="text-4xl text-center mt-3 font-bold">
+          Total: $<span id="discount-total-price">1299</span>
+        </h2>
+      </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
